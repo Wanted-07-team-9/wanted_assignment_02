@@ -42,3 +42,12 @@ export const ErrorComponent = styled.div`
   justify-content: center;
   margin-top: 13em;
 `;
+
+export const Spinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 13em;
+  height: 50%;
+  width: 50%;
+`;

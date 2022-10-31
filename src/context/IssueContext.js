@@ -106,11 +106,11 @@ export function useListDispatch() {
   return dispatch;
 }
 // API처리 함수
-export async function getDataList(dispatch, page) {
+export const getDataList = async (dispatch, page) => {
   dispatch({ type: 'GET_DATALIST' });
   try {
     const response = await axios.get(
-      `https://api.github.com/repos/angular/angular-cli/issues?sort=comments&state=open&per_page=10&page=${page}`,
+      `https://api.github.com/repos/angular/angular-cli/issues?sort=comments&state=open&per_page=7&page=${page}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -122,9 +122,9 @@ export async function getDataList(dispatch, page) {
   } catch (e) {
     dispatch({ type: 'GET_DATALIST_ERROR', error: e });
   }
-}
+};
 
-export async function getUser(dispatch, number) {
+export async function getDetailPage(dispatch, number) {
   dispatch({ type: 'GET_DETAILPAGE_DATA' });
   try {
     const response = await axios.get(
