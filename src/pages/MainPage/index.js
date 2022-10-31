@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { getIssueList } from '../../api/getData';
 import Loading from '../../components/Loading';
 import IssueList from '../../components/IssueList';
@@ -7,15 +7,37 @@ import * as Styled from './style';
 import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
-  const [issueDataArr, setIssueDataArr] = useState();
+  const [issueDataArr, setIssueDataArr] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const loader = useRef(null);
   const navigate = useNavigate();
+
+  const handleObserver = useCallback(entries => {
+    const target = entries[0];
+    if (target.isIntersecting) {
+      setPage(prev => prev + 1);
+    }
+  }, []);
+  useEffect(() => {
+    const option = {
+      root: null,
+      rootMargin: '20px',
+      threshold: 0,
+    };
+    const observer = new IntersectionObserver(handleObserver, option);
+    if (loader.current) observer.observe(loader.current);
+  }, [handleObserver]);
 
   useEffect(() => {
     try {
-      getIssueList(1)
+      getIssueList(page)
         .then(res => {
-          setIssueDataArr(res);
+          if (page === 1) {
+            setIssueDataArr(res);
+          } else {
+            setIssueDataArr(prev => [...prev, ...res]);
+          }
         })
         .then(() => {
           setIsLoading(false);
@@ -24,7 +46,7 @@ const MainPage = () => {
       console.log(e.message);
       navigate('/');
     }
-  }, []);
+  }, [page]);
 
   return (
     <>
@@ -69,6 +91,7 @@ const MainPage = () => {
           </>
         )}
       </Styled.PageContainer>
+      <div ref={loader} />
     </>
   );
 };
