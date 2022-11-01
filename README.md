@@ -268,7 +268,6 @@ getIssueList: (page, { owner, repo }) => {
 <p align="center">
 <img src="https://user-images.githubusercontent.com/74575497/199195438-e118315b-c2e7-430b-b45a-020ef5c14d77.png?raw=true" />
 </p>
-t.com/74575497/199195438-e118315b-c2e7-430b-b45a-020ef5c14d77.png">
 
 ### 그 외 기능(옵션)
 - 헤더의 로고 클릭시 메인 페이지 이동 기능
