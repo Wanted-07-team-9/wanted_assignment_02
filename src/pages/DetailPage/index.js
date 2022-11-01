@@ -22,7 +22,7 @@ const DetailPage = () => {
         });
     } catch (e) {
       console.log(e.message);
-      navigate('/');
+      navigate('/error');
     }
   }, [number]);
 

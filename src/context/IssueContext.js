@@ -7,6 +7,7 @@ const initialState = {
     loading: false,
     data: null,
     error: null,
+    page: null,
   },
   detailPageData: {
     loading: false,
@@ -20,12 +21,14 @@ const loadingState = {
   loading: true,
   data: null,
   error: null,
+  page: null,
 };
 
 // 성공했을 때의 상태 만들어주는 함수
-const success = data => ({
+const success = (data, page) => ({
   loading: false,
   data,
+  page,
   error: null,
 });
 
@@ -106,11 +109,11 @@ export function useListDispatch() {
   return dispatch;
 }
 // API처리 함수
-export const getDataList = async (dispatch, page) => {
+export const getDataList = async (dispatch, page = null) => {
   dispatch({ type: 'GET_DATALIST' });
   try {
     const response = await axios.get(
-      `https://api.github.com/repos/angular/angular-cli/issues?sort=comments&state=open&per_page=7&page=${page}`,
+      `https://api.github.com/repos/angular/angular-cli/issues?sort=comments&state=open&per_page=9&page=${page}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +121,7 @@ export const getDataList = async (dispatch, page) => {
         },
       }
     );
-    dispatch({ type: 'GET_DATALIST_SUCCESS', data: response.data });
+    dispatch({ type: 'GET_DATALIST_SUCCESS', data: response.data, page });
   } catch (e) {
     dispatch({ type: 'GET_DATALIST_ERROR', error: e });
   }

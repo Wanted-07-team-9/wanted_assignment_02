@@ -16,9 +16,14 @@ const DetailPageComponent = ({ detailPageData }) => {
           <Styled.IssueListUserName>{detailPageData.user.login}</Styled.IssueListUserName>
           <Styled.CreatedAt>{detailPageData.Created_at}</Styled.CreatedAt>
         </Styled.ItemDetails>
-        <Styled.CommentCounter>코멘트:{detailPageData.comments}</Styled.CommentCounter>
+        <Styled.CommentCounter>
+          <p>코멘트:</p>
+          <p>{detailPageData.comments}</p>
+        </Styled.CommentCounter>
       </Styled.ItemContainer>
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <Styled.MarkdownContainer>
+        <ReactMarkdown>{markdown}</ReactMarkdown>
+      </Styled.MarkdownContainer>
     </>
   );
 };

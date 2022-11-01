@@ -26,8 +26,15 @@ export const IssueListUserName = styled.div`
 
 export const CreatedAt = styled.div``;
 export const CommentCounter = styled.div`
+  p {
+    margin: 0;
+  }
   flex-basis: 15%;
   text-align: end;
+  display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 //DetailPage Components
@@ -35,6 +42,15 @@ export const UserAvaterImg = styled.img`
   width: 4em;
   height: 4em;
   margin: auto 0;
+`;
+export const MarkdownContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    overflow: visible;
+  }
 `;
 // ErrorPage Components
 export const ErrorComponent = styled.div`
@@ -47,7 +63,7 @@ export const Spinner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 13em;
-  height: 50%;
-  width: 50%;
+  margin: 5em auto;
+  height: 30%;
+  width: 30%;
 `;

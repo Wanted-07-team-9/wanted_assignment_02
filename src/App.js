@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
 import Header from './components/Header';
 import DetailPage from './pages/DetailPage';
@@ -12,9 +12,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/main" element={<MainPage />} />
+          <Route path="/" element={<MainPage />} />
           <Route path="/detail/:number" element={<DetailPage />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </div>
