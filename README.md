@@ -97,7 +97,7 @@ wanted_assignment_02
 ## Assignment1. 이슈 목록 및 상세 화면 기능 구현
 - **이슈 목록 화면**
 <p align="center">
-<img src="https://github.com/tirhande/test_repo/blob/main/wanted/main.png?raw=true" width=400>
+<img src="https://user-images.githubusercontent.com/74575497/199195259-400827da-8c80-416f-80b4-f4b8e1fcf0fd.png" width=400>
 </p>
 
 ```javascript
@@ -237,11 +237,12 @@ function IssueProvider({ children }) {
 ## Assignment4. 에러 화면 구현
 <p align="center">잘못된 페이지로 접근시 화면 (PC)</p>
 <p align="center">
-<img src="https://github.com/tirhande/test_repo/blob/6a2c74eb2bc880250880b4742901dd6456acba99/wanted/error_pc.png?raw=true" width="400"/>
+<img src="https://user-images.githubusercontent.com/74575497/199195324-47a549ff-95c1-45a4-928a-f18f5e411c5c.png?raw=true" width="400"/>
 </p>
-<p align="center">잘못된 페이지로 접근시 화면 (모바일)</p>
+<p align="center">잘못된 페이지로 접근시 화면
+ (모바일)</p>
 <p align="center">
-<img src="https://github.com/tirhande/test_repo/blob/6a2c74eb2bc880250880b4742901dd6456acba99/wanted/error_mobile.png?raw=true" width="200" />
+<img src="https://user-images.githubusercontent.com/74575497/199195338-28994a83-4c38-481a-9a2c-b84992af731e.png?raw=true" width="200" />
 </p>
 
 
@@ -261,13 +262,13 @@ getIssueList: (page, { owner, repo }) => {
 ## Assignment6. 반응형 웹 구현(UI는 데스크톱, 모바일에서 보았을 때 모두 읽기 편하게 구현)
 <p>PC 화면</p>
 <p align="center">
-<img src="https://github.com/tirhande/test_repo/blob/main/wanted/detail.png?raw=true" />
+<img src="https://user-images.githubusercontent.com/74575497/199195430-9460949b-7f91-4a6f-8e71-23e878e75ff0.png?raw=true" />
 </p>
 <p>모바일 화면</p>
 <p align="center">
-<img src="https://github.com/tirhande/test_repo/blob/main/wanted/detail_m.png?raw=true" />
+<img src="https://user-images.githubusercontent.com/74575497/199195438-e118315b-c2e7-430b-b45a-020ef5c14d77.png?raw=true" />
 </p>
-
+t.com/74575497/199195438-e118315b-c2e7-430b-b45a-020ef5c14d77.png">
 
 ### 그 외 기능(옵션)
 - 헤더의 로고 클릭시 메인 페이지 이동 기능
